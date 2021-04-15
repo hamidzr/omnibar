@@ -44,7 +44,7 @@ export default class Omnibar<T> extends React.PureComponent<
               ? results.slice(0, this.props.maxResults)
               : results,
           displayResults: results.length > 0,
-          selectedIndex: Math.min(this.state.selectedIndex, results.length - 1),
+          selectedIndex: results.length == 0 ? -1 : 0,
         });
         this.props.onQuery && this.props.onQuery(results);
       });
