@@ -288,6 +288,10 @@ var Omnibar = /** @class */ (function (_super) {
                     _this.next();
                     evt.preventDefault();
                     break;
+                case KEYS.TAB:
+                    _this.next();
+                    evt.preventDefault();
+                    break;
                 case KEYS.ENTER:
                     _this.action();
                     break;
