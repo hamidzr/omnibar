@@ -39,7 +39,7 @@ declare namespace Omnibar {
     // max items to display in view
     maxViewableResults?: number;
     // optional action override
-    onAction?: <T>(item: T) => void;
+    onAction?: <T>(item: T, query: (input: string) => void) => void;
     // triggered when a query is made
     onQuery?: <T>(items: Array<T>) => void;
     // optional input placeholder text

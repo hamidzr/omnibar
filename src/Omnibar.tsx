@@ -86,7 +86,7 @@ export default class Omnibar<T> extends React.PureComponent<
         : this.state.selectedIndex;
     const item = this.state.results[idx];
     const action = this.props.onAction || AnchorAction;
-    action.call(null, item);
+    action.call(null, item, this.query);
   };
 
   handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {

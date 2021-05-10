@@ -267,7 +267,7 @@ var Omnibar = /** @class */ (function (_super) {
                 : _this.state.selectedIndex;
             var item = _this.state.results[idx];
             var action = _this.props.onAction || AnchorAction;
-            action.call(null, item);
+            action.call(null, item, _this.query);
         };
         _this.handleChange = function (evt) {
             var value = evt.target.value;
@@ -311,7 +311,7 @@ var Omnibar = /** @class */ (function (_super) {
         };
         _this.handleFocus = function (evt) {
             if (_this.state.results.length === 0 && _this.props.showEmpty) {
-                _this.query("");
+                _this.query('');
             }
             if (_this.props.onFocus) {
                 _this.props.onFocus(evt);
