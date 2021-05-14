@@ -246,7 +246,7 @@ var Omnibar = /** @class */ (function (_super) {
             _this.setState(function (prevState) {
                 var selectedIndex = prevState.selectedIndex - 1;
                 if (selectedIndex >= 0) {
-                    return { selectedIndex: selectedIndex };
+                    return { selectedIndex: selectedIndex, hoveredIndex: selectedIndex };
                 }
             });
         };
@@ -254,7 +254,7 @@ var Omnibar = /** @class */ (function (_super) {
             _this.setState(function (prevState) {
                 var selectedIndex = prevState.selectedIndex + 1;
                 if (selectedIndex < prevState.results.length) {
-                    return { selectedIndex: selectedIndex };
+                    return { selectedIndex: selectedIndex, hoveredIndex: selectedIndex };
                 }
             });
         };
@@ -298,7 +298,7 @@ var Omnibar = /** @class */ (function (_super) {
             }
         };
         _this.handleMouseEnterItem = function (hoveredIndex) {
-            _this.setState({ hoveredIndex: hoveredIndex });
+            _this.setState({ hoveredIndex: hoveredIndex, selectedIndex: hoveredIndex });
         };
         _this.handleMouseLeave = function () {
             _this.setState({ hoveredIndex: -1 });

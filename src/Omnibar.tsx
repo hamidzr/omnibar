@@ -62,7 +62,7 @@ export default class Omnibar<T> extends React.PureComponent<
     this.setState((prevState: Omnibar.State<T>) => {
       const selectedIndex = prevState.selectedIndex - 1;
       if (selectedIndex >= 0) {
-        return { selectedIndex };
+        return { selectedIndex, hoveredIndex: selectedIndex };
       }
     });
   };
@@ -71,7 +71,7 @@ export default class Omnibar<T> extends React.PureComponent<
     this.setState((prevState: Omnibar.State<T>) => {
       const selectedIndex = prevState.selectedIndex + 1;
       if (selectedIndex < prevState.results.length) {
-        return { selectedIndex };
+        return { selectedIndex, hoveredIndex: selectedIndex };
       }
     });
   };
@@ -119,7 +119,7 @@ export default class Omnibar<T> extends React.PureComponent<
   };
 
   handleMouseEnterItem = (hoveredIndex: number) => {
-    this.setState({ hoveredIndex });
+    this.setState({ hoveredIndex, selectedIndex: hoveredIndex });
   };
 
   handleMouseLeave = () => {

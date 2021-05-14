@@ -1,6 +1,6 @@
 {
   "name": "omnibar",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "Extensible search component for React.",
   "main": "./dist/index.js",
   "types": "./typings/index.d.ts",
